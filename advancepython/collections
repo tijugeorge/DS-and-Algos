@@ -1,0 +1,27 @@
+import collections
+
+Card = collections.namedtuple('Card', ['rank', 'suit'])
+
+class FrenchDeck:
+    ranks = [str(n) for n in range(2, 11)] + list('JQKA')
+    suits = 'spades diamonds clubs hearts'.split()
+    def __init__(self):
+        self._cards = [Card(rank, suit) for suit in self.suits for rank in self.ranks]
+        
+    def __len__(self):
+        return len(self._cards)
+    
+    def __getitem__(self, position):
+        return self._cards[position]
+    
+ff= FrenchDeck()
+print(ff.ranks)
+print(ff.suits)
+count = ff.__len__() #or
+print(len(ff))
+for i in range(count):
+    #print(ff.__getitem__(i)) #or
+    print(ff[i])
+print('-----------------------------------')    
+from random import choice
+print(choice(ff))
