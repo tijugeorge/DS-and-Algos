@@ -2,7 +2,7 @@ import heapq
 
 class Solution:
     def lastStoneWeight(self, stones):
-        stones = [-stone for stone in stones]
+        stones = [-stone for stone in stones]  #negative to make it max heap as in python the default heap is min heap
         heapq.heapify(stones)
         print(stones)
         while len(stones)>1:
