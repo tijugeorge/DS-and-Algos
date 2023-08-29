@@ -12,7 +12,7 @@ class Solution:
                     backtrack(path, i, curr+num)
                     path.pop()
 
-            ans = []
-            backtrack([], ,0, 0)
-            return ans
+        ans = []
+        backtrack([], ,0, 0)
+        return ans
                 
